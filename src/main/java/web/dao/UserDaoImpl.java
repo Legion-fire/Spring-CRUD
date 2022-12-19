@@ -5,10 +5,8 @@ import web.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-import javax.transaction.Transactional;
 
 @Component
-@Transactional
 public class UserDaoImpl implements UserDAO {
     @PersistenceContext
     private EntityManager entityManager;
@@ -29,8 +27,8 @@ public class UserDaoImpl implements UserDAO {
     }
 
     @Override
-    public void removeUser(long id) {
-        entityManager.remove(getUserById(id));
+    public void removeUser(int id) {
+        entityManager.remove(id);
     }
 
     @Override
