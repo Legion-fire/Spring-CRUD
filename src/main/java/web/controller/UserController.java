@@ -49,8 +49,8 @@ public class UserController {
         return "users/edit";
     }
 
-    @PostMapping("/id")
-    public String update(User user, @RequestParam("id") long id) {
+    @PostMapping("/edit")
+    public String update(@ModelAttribute("id") long id, User user) {
         user.setUserId(id);
         userService.updateUser(user);
         return "redirect:/users";
