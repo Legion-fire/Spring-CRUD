@@ -18,7 +18,7 @@
             <th> Е-мейл </th>
         </tr>
         <tr th:each ="user : ${users}">
-            <td><a th:href="@{/users/id (id = ${user.userId})}" th:utext="${user.userId}">UserId</a></td>
+            <td><a th:href="@{/users/user (id = ${user.userId})}" th:utext="${user.userId}">UserId</a></td>
             <td th:utext="${user.firstName}"> Имя </td>
             <td th:utext="${user.lastName}"> Фамилия </td>
             <td th:utext="${user.email}"> Е-мейл </td>

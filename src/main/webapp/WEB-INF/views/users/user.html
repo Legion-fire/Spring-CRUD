@@ -11,7 +11,7 @@
 <p th:text = "${user.getLastName()}">VALUE</p>
 <p th:text = "${user.getEmail()}">VALUE</p>
 
-<form th:method="POST" th:action="@{/users/id(id=${user.getUserId()})}">
+<form th:method="POST" th:action="@{/users/edit (id=${user.getUserId()})}">
     <input type="submit" value="Удалить"/>
 </form>
 

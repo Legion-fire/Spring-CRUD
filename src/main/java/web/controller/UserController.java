@@ -24,8 +24,8 @@ public class UserController {
         return "users/index";
     }
 
-    @GetMapping("/id")
-    public String getUser(@RequestParam("id") int id, Model model) {
+    @GetMapping("/user")
+    public String getUser(@ModelAttribute("id") int id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
         return "users/user";
     }
@@ -57,7 +57,7 @@ public class UserController {
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam("id") int id) {
+    public String delete(@ModelAttribute("id") int id) {
         userService.removeUser(id);
         return "redirect:/users";
     }
